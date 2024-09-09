@@ -1,5 +1,6 @@
 require("@openzeppelin/hardhat-upgrades");
 require("@nomicfoundation/hardhat-toolbox");
+require("hardhat-gas-reporter");
 require("dotenv").config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -30,6 +31,11 @@ module.exports = {
   },
   sourcify: {
     enabled: true
+  },
+  gasReporter: {
+    currency: 'USD',
+    gasPrice: 21,
+    enabled: process.env.REPORT_GAS === 'true',
   }
 };
 

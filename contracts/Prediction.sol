@@ -23,8 +23,7 @@ contract SimplePredictionMarket is
     // Track user rewards
     mapping(address => uint256) public userRewards;
 
-    // Blacklist for restricting addresses
-    mapping(address => bool) public blacklist;
+
 
     // Question Data
     struct Question {
@@ -36,14 +35,22 @@ contract SimplePredictionMarket is
         bool upperLimitWon;
     }
 
+    enum Predictions{
+        upper,
+        middle,
+        lower
+     }
+
     Question public currentQuestion;
 
-    // Track deposits and predictions for the current question
+    mapping(address => bool) public blacklist;
     mapping(address => uint256) public userDeposits;
     mapping(address => bool) public userPredictions; // true = higher, false = lower
     mapping(address => address) public referrer; 
     mapping(address => uint256) public referrerClaimAmount;
     mapping(address=> uint256) public referrerClaimedAmount;
+    mapping(address=>bool) public platformUser;
+    mapping(address=>bool) internal isActiveParticipant;
     address[] public activeParticipants;
 
     // Events
@@ -104,45 +111,54 @@ contract SimplePredictionMarket is
             upperLimitWon: false // default value
         });
 
-        // Clear active participants list
-        delete activeParticipants;
+      // Clear the mapping and array of active participants
+    for (uint256 i = 0; i < activeParticipants.length; i++) {
+        isActiveParticipant[activeParticipants[i]] = false;
+    }
+    delete activeParticipants;
         emit QuestionCreated(_upperLimit, _lowerLimit);
     }
 
     // User deposits and makes a prediction
     function depositAndAnswer(bool _prediction, uint256 _amount, address _referrer) external notBlacklisted withinQuestionTime nonReentrant {
         require(_amount > 0, "Deposit must be greater than zero");
-         require(_referrer != msg.sender,"referrer can't be the referee");
+        require(_referrer != msg.sender,"referrer can't be the referee");
 
-          bool alreadyActive = false;
-        for (uint256 i = 0; i < activeParticipants.length; i++) {
-            if (activeParticipants[i] == msg.sender) {
-                alreadyActive = true;
-                break;
-            }
-        }
         // Transfer tokens from the user to the contract
-        if(referrer[msg.sender]== address(0) && _referrer != address(0) && !alreadyActive){
+        if(referrer[msg.sender]== address(0) && _referrer != address(0) && !platformUser[msg.sender]){
           referrer[msg.sender] = _referrer;
-          referrerClaimAmount[_referrer] += (_amount * 10)/100;
+           if(referrer[_referrer] != address(0)){
+            if(referrer[referrer[_referrer]] != address(0)){
+                referrerClaimAmount[referrer[referrer[_referrer]]] +=(_amount * 2)/100;
+                referrerClaimAmount[referrer[_referrer]] += (_amount *3) /100;
+                referrerClaimAmount[_referrer] += (_amount * 5) /100;
+            }else{
+                referrerClaimAmount[referrer[_referrer]] += (_amount *3) /100;
+                referrerClaimAmount[_referrer] += (_amount * 5) /100;
+            }
+         }else{
+            referrerClaimAmount[_referrer] += (_amount * 5) /100;
+         }
         }else{
-           referrerClaimAmount[referrer[msg.sender]] += (_amount * 10)/100; 
+           referrerClaimAmount[referrer[referrer[referrer[msg.sender]]]] +=(_amount * 2)/100;
+            referrerClaimAmount[referrer[referrer[msg.sender]]] += (_amount *3) /100;
+            referrerClaimAmount[referrer[msg.sender]] += (_amount * 5) /100;
         }
-        token.transferFrom(msg.sender, address(this), _amount);
 
-        // Overwrite user's deposit and prediction
-        userDeposits[msg.sender] = _amount;
-        userPredictions[msg.sender] = _prediction;
 
-        // Check if the user is already an active participant
-       
-
-        // Add to active participants if not already present
-        if (!alreadyActive) {
+        if (!isActiveParticipant[msg.sender]) {
             activeParticipants.push(msg.sender);
+            isActiveParticipant[msg.sender]=true;
+            token.transferFrom(msg.sender, address(this), _amount);
+            userDeposits[msg.sender] = _amount;
+            userPredictions[msg.sender] = _prediction;
+            platformUser[msg.sender] = true;
+            emit UserAnswered(msg.sender, _amount, _prediction);
+
+        }else{
+            revert("Active User");
         }
 
-        emit UserAnswered(msg.sender, _amount, _prediction);
         
     }
 
@@ -217,16 +233,16 @@ contract SimplePredictionMarket is
     }
 
     // Fetch user details for the current question, check if user is an active participant
-    function getUserDetails(address _user) external view returns (bool isActiveParticipant, uint256 deposit, bool prediction) {
-        isActiveParticipant = false;
+    function getUserDetails(address _user) external view returns (bool _isActiveParticipant, uint256 deposit, bool prediction) {
+        _isActiveParticipant = false;
         for (uint256 i = 0; i < activeParticipants.length; i++) {
             if (activeParticipants[i] == _user) {
-                isActiveParticipant = true;
+                _isActiveParticipant = true;
                 break;
             }
         }
 
-        if (isActiveParticipant) {
+        if (_isActiveParticipant) {
             deposit = userDeposits[_user];
             prediction = userPredictions[_user];
         } else {
