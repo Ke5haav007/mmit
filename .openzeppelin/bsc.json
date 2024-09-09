@@ -1,0 +1,1579 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0xF5862a917d649D874CfAc41285206474CAC4836c",
+      "txHash": "0x8746c7e41d9812873263064c556471d2f30fa1bca3ffa2d855b02ab592958d92",
+      "kind": "uups"
+    },
+    {
+      "address": "0x886869bffD6A71d1015363c50c19be5e1FD59939",
+      "txHash": "0xfd1612f95e0afcd7b50f0e8e35568a70420b6ad5bfa2f4dcf957d5374f380786",
+      "kind": "uups"
+    },
+    {
+      "address": "0x21D34bE6920f10DCFFE11692eadAc9D08a4D1Fd8",
+      "txHash": "0xbf1456a9e2be4828b5201fc8e427165c8ccae8ad13b118332b5e881ee002afe7",
+      "kind": "uups"
+    },
+    {
+      "address": "0x5bE4a59284ab01e46c8769C49fCe824E46e79949",
+      "txHash": "0x58d62abb7101c34d8832fc6c6e0d8734285c55c9094736d0bc1c3a42bbb65146",
+      "kind": "uups"
+    },
+    {
+      "address": "0x8c36c6B3306b116b698D81175c8a5aD5B5809524",
+      "txHash": "0x3e9dec8e7af4d2119c051ad556c3caf7eed6321f3fcf59b59d567a2ebbf2e486",
+      "kind": "uups"
+    },
+    {
+      "address": "0xBC9409319e2c4746e054bCa380c269B7Fd6dB7d2",
+      "txHash": "0x374acb74b9eb6f60c18a562517bc148e89f2924ecbc747d069a8c0902f0d8562",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "4d97c170d1d753e9618d803084a1516dfb65101a88d31c35ad37d06c2cd85f77": {
+      "address": "0x47Af7c568789116FC8bBc98682B6EBfB1706917f",
+      "txHash": "0xebdfaae2adf657e89f5d4fb861f744c273fd90c4dd3d8d6d90b537bd698a42d9",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "token",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20)1206",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:19"
+          },
+          {
+            "label": "rewardMultiplier",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:20"
+          },
+          {
+            "label": "questionTimeLimit",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:21"
+          },
+          {
+            "label": "userRewards",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:24"
+          },
+          {
+            "label": "blacklist",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:27"
+          },
+          {
+            "label": "currentQuestion",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_struct(Question)1944_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:39"
+          },
+          {
+            "label": "userDeposits",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:42"
+          },
+          {
+            "label": "userPredictions",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:43"
+          },
+          {
+            "label": "activeParticipants",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:44"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)243_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20)1206": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Question)1944_storage": {
+            "label": "struct SimplePredictionMarket.Question",
+            "members": [
+              {
+                "label": "upperLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lowerLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "questionStartTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "settlementTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "settled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "upperLimitWon",
+                "type": "t_bool",
+                "offset": 1,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "c4b033f974b042e4ace32511d767eb8f76b4debbfd37326d237df6d9871cc0b3": {
+      "address": "0xd52E92A3c7AD25A3053b115419cCe73Eb7ad7fC4",
+      "txHash": "0x0b3ed3475dd0cb351239e210a1ebb1587cbcd4f2aaa38395591664e1e09c5fcd",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "token",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20)1206",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:19"
+          },
+          {
+            "label": "rewardMultiplier",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:20"
+          },
+          {
+            "label": "questionTimeLimit",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:21"
+          },
+          {
+            "label": "userRewards",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:24"
+          },
+          {
+            "label": "blacklist",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:27"
+          },
+          {
+            "label": "currentQuestion",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_struct(Question)1944_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:39"
+          },
+          {
+            "label": "userDeposits",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:42"
+          },
+          {
+            "label": "userPredictions",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:43"
+          },
+          {
+            "label": "referrer",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:44"
+          },
+          {
+            "label": "referrerClaimAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:45"
+          },
+          {
+            "label": "referrerClaimedAmount",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:46"
+          },
+          {
+            "label": "activeParticipants",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)243_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20)1206": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Question)1944_storage": {
+            "label": "struct SimplePredictionMarket.Question",
+            "members": [
+              {
+                "label": "upperLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lowerLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "questionStartTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "settlementTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "settled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "upperLimitWon",
+                "type": "t_bool",
+                "offset": 1,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "ad0295135208681065aa40556d9c9e16298974322acce05b14fbf33ea2fc41a5": {
+      "address": "0xCF0A606330fB7D4d069Ff8beceae5328b8c69828",
+      "txHash": "0xaf0bfb7bc038afa4a607b4ab59f2e04c5248fb4f2907365ef3bd16e775cec7f1",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "token",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20)1206",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:19"
+          },
+          {
+            "label": "rewardMultiplier",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:20"
+          },
+          {
+            "label": "questionTimeLimit",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:21"
+          },
+          {
+            "label": "userRewards",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:24"
+          },
+          {
+            "label": "blacklist",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:27"
+          },
+          {
+            "label": "currentQuestion",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_struct(Question)1944_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:39"
+          },
+          {
+            "label": "userDeposits",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:42"
+          },
+          {
+            "label": "userPredictions",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:43"
+          },
+          {
+            "label": "referrer",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:44"
+          },
+          {
+            "label": "activeParticipants",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)243_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20)1206": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Question)1944_storage": {
+            "label": "struct SimplePredictionMarket.Question",
+            "members": [
+              {
+                "label": "upperLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lowerLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "questionStartTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "settlementTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "settled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "upperLimitWon",
+                "type": "t_bool",
+                "offset": 1,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "019ed21935423e65f030720c295ce28884ef36ea12f296c5fa8a8ae90ce22308": {
+      "address": "0x31620935D3d5daB6AAbD3171088897D7b605A9BA",
+      "txHash": "0xa209b1f36d1262e9ba1a9bb0d31823c6f64ab7cd4cc235e6ca235658e950b068",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "token",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20)1206",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:19"
+          },
+          {
+            "label": "rewardMultiplier",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:20"
+          },
+          {
+            "label": "questionTimeLimit",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:21"
+          },
+          {
+            "label": "userRewards",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:24"
+          },
+          {
+            "label": "blacklist",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:27"
+          },
+          {
+            "label": "currentQuestion",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_struct(Question)1944_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:39"
+          },
+          {
+            "label": "userDeposits",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:42"
+          },
+          {
+            "label": "userPredictions",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:43"
+          },
+          {
+            "label": "referrer",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:44"
+          },
+          {
+            "label": "activeParticipants",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)243_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20)1206": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Question)1944_storage": {
+            "label": "struct SimplePredictionMarket.Question",
+            "members": [
+              {
+                "label": "upperLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lowerLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "questionStartTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "settlementTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "settled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "upperLimitWon",
+                "type": "t_bool",
+                "offset": 1,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "46002301afdc941186b597b35d03ddc8919ce4543069c4b6b26c0678e085d600": {
+      "address": "0x5CbA94b24AA178447A73fBd5DDBD5074935F2Cf7",
+      "txHash": "0x886299941669e591053586965183e17d20c0fcde6cb918198a5bd99a93796744",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "token",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20)1206",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:19"
+          },
+          {
+            "label": "rewardMultiplier",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:20"
+          },
+          {
+            "label": "questionTimeLimit",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:21"
+          },
+          {
+            "label": "userRewards",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:24"
+          },
+          {
+            "label": "blacklist",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:27"
+          },
+          {
+            "label": "currentQuestion",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_struct(Question)1944_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:39"
+          },
+          {
+            "label": "userDeposits",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:42"
+          },
+          {
+            "label": "userPredictions",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:43"
+          },
+          {
+            "label": "referrer",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:44"
+          },
+          {
+            "label": "referrerClaimAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:45"
+          },
+          {
+            "label": "referrerClaimedAmount",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:46"
+          },
+          {
+            "label": "activeParticipants",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)243_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20)1206": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Question)1944_storage": {
+            "label": "struct SimplePredictionMarket.Question",
+            "members": [
+              {
+                "label": "upperLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lowerLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "questionStartTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "settlementTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "settled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "upperLimitWon",
+                "type": "t_bool",
+                "offset": 1,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "a32cf0c1fd333c278b3ea57a0ca21a31da89b61964f83c858b51ac26dc06053d": {
+      "address": "0x4BD5B2AF17a89D231479E0B84d40293Fe312A462",
+      "txHash": "0xe22d4d0b8a31dc4c0efdc761da0604d760fd1ac52185ba232c63c02adf6570f5",
+      "layout": {
+        "solcVersion": "0.8.20",
+        "storage": [
+          {
+            "label": "token",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20)1206",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:19"
+          },
+          {
+            "label": "rewardMultiplier",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:20"
+          },
+          {
+            "label": "questionTimeLimit",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:21"
+          },
+          {
+            "label": "userRewards",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:24"
+          },
+          {
+            "label": "blacklist",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:27"
+          },
+          {
+            "label": "currentQuestion",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_struct(Question)1944_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:39"
+          },
+          {
+            "label": "userDeposits",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:42"
+          },
+          {
+            "label": "userPredictions",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:43"
+          },
+          {
+            "label": "referrer",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:44"
+          },
+          {
+            "label": "referrerClaimAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:45"
+          },
+          {
+            "label": "referrerClaimedAmount",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:46"
+          },
+          {
+            "label": "activeParticipants",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "SimplePredictionMarket",
+            "src": "contracts/Prediction.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)80_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)243_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20)1206": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Question)1944_storage": {
+            "label": "struct SimplePredictionMarket.Question",
+            "members": [
+              {
+                "label": "upperLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lowerLimit",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "questionStartTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "settlementTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "settled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "upperLimitWon",
+                "type": "t_bool",
+                "offset": 1,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:40",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
